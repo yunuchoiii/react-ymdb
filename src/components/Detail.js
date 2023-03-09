@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import styles from "./Detail.module.css"
 import Loader from "./Loader";
 
-function Detail () {
+function Detail (props) {
   const {id} = useParams();
   const [loading, setLoading] = useState(true);
   const [info, setInfo] = useState({})
+
   const getMovies = async()=>{
     const json = await (await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)).json();
     setInfo(json.data.movie)
@@ -14,12 +15,14 @@ function Detail () {
   }
   useEffect(() => {
     getMovies();
-  });
+  }, []);
   const runtime = `${Math.floor(info.runtime / 60)}h ${info.runtime % 60}m`
 
   function pagePop () {
     window.history.back();
   }
+
+  console.log(info);
 
   return (
   <div className={styles.Detail} style={{backgroundImage: `url(${info.large_cover_image})`}}>
@@ -36,6 +39,9 @@ function Detail () {
           <div className={styles.contentbox}>
             <h1 className={styles.title}>{info.title}</h1>
             <div style={{display: "flex"}}>
+              <a href={`https://www.imdb.com/title/${info.imdb_code}`}>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png" alt="imdb" className={styles.imdbBtn}></img>
+              </a>
               <div className={styles.minibox}>
                 <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="rating" className={styles.miniicon} style={{filter: "invert(0)"}}></img>
                 {info.rating}

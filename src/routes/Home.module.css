@@ -12,6 +12,7 @@
 .title {
   color: #ffc008;
   font-size: 3rem;
+  font-weight: 700;
   letter-spacing: -0.2rem;
   display: flex;
   align-items: center;
@@ -28,4 +29,20 @@ select {
   -moz-appearance:none; /* 파이어폭스 화살표 없애기 */
   appearance:none; /* 화살표 없애기 */
   text-align-last: center;
+}
+.buttonBox {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 40px;
+  width: 78%;
+  height: 60px;
+}
+.btn {
+  color: #ffc008;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: -0.1rem;
+  margin: 10px;
 }

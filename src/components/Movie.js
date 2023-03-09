@@ -15,14 +15,14 @@ function Movie ({id, coverImg, title, summary, genres, rating}) {
             <p className={styles.summary}>{summary}</p>
             <div className={styles.bottom}>
               <div style={{display:"flex", alignItems: "center", marginRight:"20px"}}>
-                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" style={{width: "20px", marginRight: "5px"}}></img>
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="rating" style={{width: "20px", marginRight: "5px"}}></img>
                 <span style={{fontSize:"1.2rem", marginTop:"3px"}}>{rating}</span>
               </div>
               <div>
                 {genres.map((g, i) => {
                   return i < 4 ? <span className={styles.tag} key={g}>#{g}</span> : null 
                 })}
-              </div>            
+              </div>
             </div>
 
           </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Loader from "../components/Loader.js";
 import Movie from "../components/Movie.js";
 import styles from "./Home.module.css"
 
@@ -26,19 +27,18 @@ function Home () {
   }
   useEffect(()=>{
     getMovies();
-    console.log('yes')
   }, [selectOrder, selectSort])
 
-  return <div className={styles.Home} style={{display: "flex", justifyContent: "center", padding: "30px 20%"}}>
+  return <div className={styles.Home} style={{display: "flex", justifyContent: "center"}}>
     {loading ? 
-      <div style={{height: "100vh"}}>
-        <h1>Loading...</h1> 
+      <div style={{height: "100vh", display: "flex", justifyContent: "center", alignItems:"center"}}>
+        <Loader/>
       </div>
       : 
-      <div>
+      <div style={{padding: "30px 20%"}}>
         <div className={styles.upperbody}>
           <div className={`${styles.montserrat} ${styles.title}`}>
-            <img src="https://cdn-icons-png.flaticon.com/512/4533/4533935.png" height="45px" style={{marginRight: "10px"}}></img>
+            <img src="https://cdn-icons-png.flaticon.com/512/4533/4533935.png" alt="ymdb" height="45px" style={{marginRight: "10px"}}></img>
             YMDB
           </div>
           <div style={{display: "flex", alignItems: "center"}}>
@@ -50,7 +50,7 @@ function Home () {
               <option value="" disabled selected>Order By</option>
               {orderLsit.map((item) => <option value={item} key={item}>{item}</option>)}
             </select>
-            <img src="https://cdn-icons-png.flaticon.com/512/151/151773.png" height="20px" style={{filter: "invert(1)", marginLeft:"10px"}}></img>
+            <img src="https://cdn-icons-png.flaticon.com/512/151/151773.png" alt="" height="20px" style={{filter: "invert(1)", marginLeft:"10px"}}></img>
           </div>
         </div>
         {movies.map(movie => 

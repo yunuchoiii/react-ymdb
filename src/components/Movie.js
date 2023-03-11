@@ -19,9 +19,9 @@ function Movie ({id, coverImg, title, summary, genres, rating}) {
                 <span style={{fontSize:"1.2rem", marginTop:"3px"}}>{rating}</span>
               </div>
               <div>
-                {genres.map((g, i) => {
-                  return i < 4 ? <span className={styles.tag} key={g}>#{g}</span> : null 
-                })}
+              {typeof genres !== 'undefined' && genres.length > 0 ? genres.slice(0, 4).map((g, i) => (
+                <span className={styles.tag} key={g}>#{g}</span>
+              )) : null}
               </div>
             </div>
 

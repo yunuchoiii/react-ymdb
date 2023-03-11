@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-ymdb/static/css/main.3e8b58a7.css",
-    "main.js": "/react-ymdb/static/js/main.e25bc519.js",
+    "main.js": "/react-ymdb/static/js/main.dc5a774d.js",
     "index.html": "/react-ymdb/index.html",
     "main.3e8b58a7.css.map": "/react-ymdb/static/css/main.3e8b58a7.css.map",
-    "main.e25bc519.js.map": "/react-ymdb/static/js/main.e25bc519.js.map"
+    "main.dc5a774d.js.map": "/react-ymdb/static/js/main.dc5a774d.js.map"
   },
   "entrypoints": [
     "static/css/main.3e8b58a7.css",
-    "static/js/main.e25bc519.js"
+    "static/js/main.dc5a774d.js"
   ]
 }
